@@ -1,9 +1,12 @@
+import { fetchNotes } from '@/app/lib/notes/data'
 import React from 'react'
 
-export default function Page() {
+export default async function Page() {
+  const notes = await fetchNotes()
   return (
     <div>
-        create 
+      <h1>Create Note</h1>
+
     </div>
   )
 }
