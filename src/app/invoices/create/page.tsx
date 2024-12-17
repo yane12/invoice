@@ -1,7 +1,12 @@
+import { fetchCustomers } from '@/app/lib/data'
+import Form from '@/app/ui/invoice/create-form'
 import React from 'react'
 
-export default function Page() {
+export default async function Page() {
+  const customers = await fetchCustomers()
   return (
-    <div>Page</div>
+    <div>
+      <Form customers={customers}/>
+    </div>
   )
 }

@@ -14,7 +14,9 @@ export async function fetchUsers() {
 export async function fetchCustomers() {
     try {
         const data = await sql<Customer>`select * from customer`
+        return data.rows
     } catch (error) {
         throw new Error('failed to fetch customers')
     }
 }
+
