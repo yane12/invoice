@@ -8,6 +8,7 @@ export default function Navbar() {
             <ul className='flex gap-4'>
                 <li><Link href='/'>Home</Link></li>
                 <li><Link href='/invoices'>Invoices</Link></li>
+                <li><Link href='/notes'>Notes</Link></li>
             </ul>
         </div>
     )
