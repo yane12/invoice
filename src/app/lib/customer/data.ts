@@ -3,7 +3,7 @@ import { Customer } from "./types";
 
 export async function fetchCustomer() {
     try {
-        const customers = await sql<Customer>`SELECT * FROM customers`;
+        const customers = await sql<Customer>`SELECT * FROM customer`;
         return customers.rows
 
     } catch (error) {

@@ -16,10 +16,10 @@ const CreateCustomer = CustomerFormSchema.omit({id: true})
 export type CustomerState = {
     errors?: {
         name?: string[];
-        email: string[];
-        imageUrl: string[];
+        email?: string[];
+        imageUrl?: string[];
     };
-    message: string | null
+    message?: string | null
 }
 
 export async function createCustomer(prevState: CustomerState, formData: FormData) {
@@ -39,7 +39,7 @@ export async function createCustomer(prevState: CustomerState, formData: FormDat
     const {name, email, imageUrl} = validateFields.data
 
     try {
-        await sql`insert into customers (name, email, image_url) values (${name}, ${email}, ${imageUrl})`
+        await sql`insert into customer (name, email, image_url) values (${name}, ${email}, ${imageUrl})`
     } catch (error) {
         throw new Error("Faild to create customer");
     }
