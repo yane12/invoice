@@ -18,8 +18,9 @@ export default function Pagination({totalPages} : {totalPages: number}) {
 
 
     return (
-        <div>
+        <div className='flex gap-4'>
             <PaginationArrow direction='left' href={createPageUrl(currentPage-1)} isDisabled={currentPage <= 1} />
+            <p>pages</p>
             <PaginationArrow direction='right' href={createPageUrl(currentPage+1)} isDisabled={currentPage >= totalPages} />
         </div>
     )
