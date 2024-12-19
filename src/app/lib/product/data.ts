@@ -12,3 +12,17 @@ export async function fetchFilterdProducts(query: string, currentPage: number) {
 
     }
 }
+
+export async function fetchProductPage(query: string) {
+    const itemsPerPage = 6;
+    try {
+        const data = await sql`select count(*) from products
+            where name ilike ${`%${query}%`}`;
+        
+        const totalPages = Math.ceil(Number(data.rows[0].count) / itemsPerPage)
+        return totalPages;
+    } catch (error) {
+        throw new Error("Faild to fetch total number of products");
+        
+    }
+}

@@ -17,8 +17,8 @@ const UpdateProduct = FormSchema.omit({ id: true })
 
 export type ProductState = {
     errors?: {
-        name: string[];
-        price: string[];
+        name?: string[];
+        price?: string[];
     };
     message?: string | null;
 }

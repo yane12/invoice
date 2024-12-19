@@ -10,6 +10,7 @@ export default function Navbar() {
                 <li><Link href='/invoices'>Invoices</Link></li>
                 <li><Link href='/notes'>Notes</Link></li>
                 <li><Link href='/customers'>Customers</Link></li>
+                <li><Link href='/products'>Products</Link></li>
             </ul>
         </div>
     )
