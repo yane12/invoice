@@ -12,6 +12,18 @@ export async function fetchCustomer() {
     }
 }
 
+export async function fetchFilteredCustomers(query: string, currentPage: number) {
+    const itemsPerPage = 6;
+    const offset = (currentPage-1) * itemsPerPage;
+    try {
+        const data = await sql<Customer>`select * from customer 
+        where name ilike ${`%${query}%`} Limit ${itemsPerPage} offset ${offset}`;
+    } catch (error) {
+        throw new Error("failed to fetch filterd customers");
+        
+    }
+} 
+
 export async function fetchCustomerById(id: string) {
     try {
         const data = await sql<Customer>`select * from customer where id = ${id}`;
