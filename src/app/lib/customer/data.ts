@@ -20,7 +20,6 @@ export async function fetchFilteredCustomers(query: string, currentPage: number)
         where name ilike ${`%${query}%`} Limit ${itemsPerPage} offset ${offset}`;
     } catch (error) {
         throw new Error("failed to fetch filterd customers");
-        
     }
 } 
 
