@@ -1,7 +1,10 @@
+import Form from '@/app/ui/plants/create-form'
 import React from 'react'
 
 export default function Page() {
   return (
-    <div>Page</div>
+    <div>
+      <Form/>
+    </div>
   )
 }

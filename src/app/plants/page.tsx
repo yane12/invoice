@@ -2,6 +2,8 @@ import Link from 'next/link'
 import React from 'react'
 import { fetchPlantPages } from '../lib/plants/data';
 import Table from '../ui/plants/table';
+import Search from '../ui/plants/search';
+import Pagination from '../ui/plants/pagination';
 
 export default async function Page(props: {
     searchParams?: Promise<{
@@ -19,7 +21,12 @@ export default async function Page(props: {
     return (
         <div>
             <Link href='/plants/create'>New Plant</Link>
-            <Table query={query} totalPages={totalPages} />
+            <Search/>
+        
+            <Table query={query} currentPage={currentPage} />
+
+            <Pagination totalPages={totalPages}/> 
+            
         </div>
     )
 }

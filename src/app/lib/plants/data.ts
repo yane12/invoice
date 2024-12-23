@@ -21,7 +21,7 @@ export async function fetchPlantPages(query: string) {
         const data = await sql`select count(*) from plants where name
         ilike ${`%${query}%`}`;
 
-        const totalPages = Math.ceil(Number(data.rows[0].count)/ITEMS_PER_PAGE)
+        const totalPages = Math.ceil(Number(data.rows[0].count) / ITEMS_PER_PAGE)
         return totalPages;
     } catch (error) {
         throw new Error("Failed to fetch number plant");
