@@ -14,3 +14,10 @@ export type Invoice = {
     date: string;
     status: 'pending'| 'paid';
 }
+
+export type User = {
+    id: string,
+    name: string,
+    email: string,
+    password: string
+}
