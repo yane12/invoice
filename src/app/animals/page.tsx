@@ -14,6 +14,7 @@ export default async function Page(props: {
   return (
     <div>
       <Link href='/animals/create'>New Animal</Link>
+      
       <Table query={query} currentPage={currentPage} />
     </div>
   )
